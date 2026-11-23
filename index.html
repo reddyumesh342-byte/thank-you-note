@@ -4,411 +4,600 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Special Return Gift - S. Reddy Umesh</title>
+<meta name="theme-color" content="#180b25">
+
+<title>🎁 REDDY UMESH GIFT ❤️</title>
 
 <style>
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    min-height: 100vh;
-    font-family: Georgia, serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    overflow-x: hidden;
-    background: linear-gradient(135deg,
-        #ff758c, #ffb6d5, #c2a5ff, #80dfff, #ffe29f);
-    background-size: 400% 400%;
-    animation: bg 12s ease infinite;
+  min-height: 100vh;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: white;
+  background: #16091f;
+  overflow-x: hidden;
 }
 
-@keyframes bg {
-    0%,100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+/* BACKGROUND PHOTO GALLERY */
+
+#photo-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: #16091f;
 }
+
+.photo-wall {
+  position: absolute;
+  inset: -30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  transform: rotate(-4deg) scale(1.12);
+}
+
+.photo-wall img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 12px;
+  opacity: 0.42;
+  filter: blur(1px);
+}
+
+.photo-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 4, 25, 0.78),
+    rgba(55, 4, 45, 0.82)
+  );
+}
+
+/* MAIN LAYOUT */
 
 .container {
-    width: 100%;
-    max-width: 540px;
-    text-align: center;
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  width: 100%;
+  padding: 30px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.page {
-    display: none;
-    padding: 35px 22px;
-    border: 3px solid white;
-    border-radius: 30px;
-    background: linear-gradient(145deg,
-        #fff0f7, #ffffff, #fff0df);
-    box-shadow: 0 15px 45px #80134d55;
-    animation: appear 0.9s ease;
+.screen {
+  width: 100%;
+  max-width: 540px;
+  padding: 30px 23px;
+  text-align: center;
+  border: 1px solid rgba(255, 220, 150, 0.7);
+  border-radius: 25px;
+  background: rgba(30, 9, 37, 0.88);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 40px rgba(255, 105, 180, 0.3);
+  animation: fadeIn 1s ease;
 }
 
-.page.active {
-    display: block;
+.hidden {
+  display: none !important;
 }
 
-@keyframes appear {
-    from { opacity: 0; transform: translateY(25px) scale(.96); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-.flowers {
-    font-size: 27px;
-    margin: 10px;
-}
+/* HEADINGS */
 
 h1 {
-    color: #e60073;
-    font-size: clamp(28px, 7vw, 38px);
-    margin: 15px 0;
-    text-shadow: 2px 2px 5px #ffc0dc;
+  color: #ffdb87;
+  font-size: clamp(28px, 6vw, 43px);
+  margin-bottom: 16px;
+  text-shadow: 0 0 15px rgba(255, 200, 100, 0.6);
 }
 
-h2 {
-    color: #a00065;
-    font-size: 23px;
-    margin: 15px 0;
+.subtitle {
+  color: #ffe4ed;
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 15px 0 25px;
 }
 
-p {
-    color: #71345e;
-    font-size: 17px;
-    line-height: 1.8;
-    margin: 12px 0;
+/* GIFT */
+
+.gift {
+  font-size: 105px;
+  display: inline-block;
+  margin: 15px 0 25px;
+  animation: giftBounce 1.8s infinite;
+}
+
+/* BUTTONS */
+
+.main-button {
+  border: none;
+  padding: 15px 25px;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #ffbf52, #ff668e);
+  color: #36102c;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 0 22px rgba(255, 150, 120, 0.55);
+  transition: 0.3s;
+}
+
+.main-button:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 35px #ffb4c9;
+}
+
+/* HIGHLIGHTED PHOTO */
+
+.featured-frame {
+  display: inline-block;
+  padding: 7px;
+  margin: 12px auto 18px;
+  border-radius: 22px;
+  background: linear-gradient(
+    135deg,
+    #ffe18a,
+    #ff70b8,
+    #ffe18a
+  );
+  box-shadow: 0 0 25px #ffc45e,
+              0 0 50px rgba(255, 100, 190, 0.8);
+  animation: photoGlow 2s infinite alternate;
+}
+
+.featured-photo {
+  display: block;
+  width: 200px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.photo-caption {
+  color: #ffdc91;
+  font-size: 15px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+/* THANK YOU MESSAGE */
+
+.message {
+  font-size: 17px;
+  color: #fff0f4;
+  line-height: 1.9;
+  margin: 13px 0;
 }
 
 .signature {
-    color: #7134b7;
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 20px;
+  margin-top: 22px;
+  color: #ffd98a;
+  font-size: 22px;
+  font-style: italic;
+  line-height: 1.7;
 }
 
-.gift {
-    font-size: 115px;
-    margin: 25px 0;
-    cursor: pointer;
-    display: inline-block;
-    animation: bounce 1.5s infinite;
-    filter: drop-shadow(0 10px 10px #d64b8955);
+.share-button {
+  margin-top: 24px;
+  background: linear-gradient(45deg, #ff77a8, #ffc35e);
 }
 
-@keyframes bounce {
-    0%,100% { transform: translateY(0) rotate(-4deg); }
-    50% { transform: translateY(-15px) rotate(4deg); }
+.footer {
+  color: #f8c7db;
+  font-size: 12px;
+  margin-top: 25px;
 }
 
-.open-btn, .share-btn, .back-btn {
-    border: none;
-    padding: 14px 24px;
-    border-radius: 35px;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 18px;
-    background: linear-gradient(90deg,
-        #ff1681, #9c27b0, #536dfe);
-    box-shadow: 0 6px 18px #a0005855;
-    transition: .3s;
-}
+/* FLOATING HEARTS AND FLOWERS */
 
-.open-btn:hover, .share-btn:hover, .back-btn:hover {
-    transform: scale(1.06);
-}
-
-.caption {
-    background: linear-gradient(90deg,
-        #ffe0ef, #e9ddff, #fff0d9);
-    border-radius: 15px;
-    padding: 13px;
-    margin: 12px 0;
-    color: #9c1760;
-    font-weight: bold;
-    line-height: 1.6;
-    box-shadow: 0 3px 10px #e6a4c455;
-}
-
-.heart {
-    font-size: 40px;
-    margin: 15px;
-    animation: heartbeat 1.2s infinite;
-}
-
-@keyframes heartbeat {
-    50% { transform: scale(1.2); }
-}
-
-#confetti {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 5;
-}
-
-.float {
-    position: fixed;
-    bottom: -50px;
-    font-size: 25px;
-    animation: floatUp 9s linear infinite;
-    pointer-events: none;
-    z-index: 1;
+.floating {
+  position: fixed;
+  z-index: 3;
+  bottom: -40px;
+  pointer-events: none;
+  animation: floatUp linear forwards;
+  opacity: 0.85;
 }
 
 @keyframes floatUp {
-    0% { transform: translateY(0) rotate(0); opacity: 0; }
-    20% { opacity: 1; }
-    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+  from {
+    transform: translateY(0) rotate(0);
+    opacity: 0.9;
+  }
+  to {
+    transform: translateY(-115vh) rotate(360deg);
+    opacity: 0;
+  }
 }
 
-@media(max-width:400px) {
-    .page { padding: 27px 16px; }
-    p { font-size: 16px; }
+/* CONFETTI */
+
+.confetti {
+  position: fixed;
+  z-index: 5;
+  top: -15px;
+  width: 9px;
+  height: 14px;
+  pointer-events: none;
+  animation: confettiFall 3.5s linear forwards;
+}
+
+@keyframes confettiFall {
+  to {
+    transform: translateY(110vh) rotate(900deg);
+    opacity: 0;
+  }
+}
+
+/* ANIMATIONS */
+
+@keyframes giftBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-13px);
+  }
+}
+
+@keyframes photoGlow {
+  from {
+    box-shadow: 0 0 15px #ffc45e;
+  }
+  to {
+    box-shadow: 0 0 35px #ff70b8,
+                0 0 60px #ffc45e;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+  .photo-wall {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .photo-wall img {
+    height: 135px;
+  }
+
+  .container {
+    padding: 20px 12px;
+  }
+
+  .screen {
+    padding: 26px 17px;
+  }
+
+  .featured-photo {
+    width: 160px;
+    height: 195px;
+  }
+
+  .message {
+    font-size: 15px;
+  }
+
+  .gift {
+    font-size: 85px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- BACKGROUND PHOTOS -->
 
-    <!-- FIRST SCREEN: RETURN GIFT -->
-
-    <section class="page active" id="giftPage">
-
-        <div class="flowers">🌹 🌸 💐 🌺 🌹</div>
-
-        <div class="heart">❤️ 💗 ❤️</div>
-
-        <h1>A Little Surprise For You!</h1>
-
-        <h2>🎁 Your Return Gift Is Ready!</h2>
-
-        <p>
-            You made my birthday special with your love,
-            beautiful wishes and blessings.
-        </p>
-
-        <p>
-            Now I have a little surprise for you! 🥰
-        </p>
-
-        <div class="gift" onclick="openGift()">🎁</div>
-
-        <h2>Tap The Gift To Open It!</h2>
-
-        <button class="open-btn" onclick="openGift()">
-            🎁 OPEN YOUR RETURN GIFT
-        </button>
-
-        <p style="font-size:14px; margin-top:20px;">
-            With love from S. Reddy Umesh ❤️
-        </p>
-
-        <div class="flowers">🌷 🌺 🌸 💖 🌹</div>
-
-    </section>
-
-
-    <!-- SECOND SCREEN: THANK YOU NOTE -->
-
-    <section class="page" id="thanksPage">
-
-        <div class="flowers">🌹 🌸 💐 🌺 🌹</div>
-
-        <div class="heart">🎂 ❤️ 🎉</div>
-
-        <h1>A Special Thank You!</h1>
-
-        <h2>From S. Reddy Umesh</h2>
-
-        <p>To All My Wonderful Friends & Family 💖</p>
-
-        <div class="caption">
-            ❤️ Thank You For All Your Beautiful Birthday Wishes!
-        </div>
-
-        <div class="caption">
-            🥰 Every Message, Call And Blessing Made My Day Special!
-        </div>
-
-        <div class="caption">
-            💕 Your Love And Affection Mean So Much To Me!
-        </div>
-
-        <div class="caption">
-            🌹 I Feel Truly Blessed To Have People Like You!
-        </div>
-
-        <div class="caption">
-            ✨ Your Wishes Filled My Birthday With Happiness!
-        </div>
-
-        <div class="caption">
-            💝 Thank You For Making My Day Unforgettable!
-        </div>
-
-        <div class="caption">
-            🙏 I'm Grateful For Every Single One Of You!
-        </div>
-
-        <div class="heart">💗 💖 💗</div>
-
-        <h2>THANK YOU EVERYONE! 🙏❤️</h2>
-
-        <div class="signature">
-            With Love,<br>
-            S. REDDY UMESH
-        </div>
-
-        <div class="flowers">🌺 🌷 🌹 💐 🌸</div>
-
-        <button class="share-btn" onclick="sharePage()">
-            📲 SHARE THANK YOU NOTE
-        </button>
-
-        <br>
-
-        <button class="back-btn" onclick="goBack()">
-            ↩ BACK TO GIFT
-        </button>
-
-    </section>
-
+<div id="photo-background">
+  <div class="photo-wall" id="photo-wall"></div>
+  <div class="photo-shade"></div>
 </div>
 
-<canvas id="confetti"></canvas>
+<!-- MAIN WEBSITE -->
+
+<main class="container">
+
+  <!-- FIRST SCREEN: GIFT -->
+
+  <section class="screen" id="welcome-screen">
+
+    <div class="gift">🎁</div>
+
+    <h1>A Little Surprise For You!</h1>
+
+    <p class="subtitle">
+      A special gift filled with beautiful memories,
+      love and happiness. ❤️
+    </p>
+
+    <button class="main-button" onclick="openGift()">
+      OPEN YOUR RETURN GIFT ❤️
+    </button>
+
+    <div class="footer">
+      Made with Love • S. REDDY UMESH
+    </div>
+
+  </section>
+
+  <!-- SECOND SCREEN: THANK YOU -->
+
+  <section class="screen hidden" id="thankyou-screen">
+
+    <h1>Thank You So Much! ❤️</h1>
+
+    <!-- HIGHLIGHTED MAIN PHOTO -->
+
+    <div class="featured-frame">
+      <img
+        class="featured-photo"
+        id="featured-photo"
+        src="photo1.jpg"
+        alt="Special memory"
+      >
+    </div>
+
+    <div class="photo-caption">
+      ✨ A SPECIAL MEMORY ✨
+    </div>
+
+    <p class="message">
+      My Dear Friends and Family,
+    </p>
+
+    <p class="message">
+      Thank you so much for your wonderful
+      birthday wishes, love, blessings and
+      beautiful messages.
+    </p>
+
+    <p class="message">
+      Every wish made my day more special.
+      I feel truly blessed to have such
+      wonderful people in my life.
+    </p>
+
+    <p class="message">
+      Your love and support mean a lot to me.
+      Thank you for making my birthday
+      unforgettable! ❤️
+    </p>
+
+    <div class="signature">
+      With Love,<br>
+      S. REDDY UMESH ❤️
+    </div>
+
+    <button
+      class="main-button share-button"
+      onclick="shareWebsite()"
+    >
+      SHARE THIS SURPRISE 💌
+    </button>
+
+    <div class="footer">
+      Forever Grateful • Thank You Everyone ❤️
+    </div>
+
+  </section>
+
+</main>
 
 <script>
 
-// OPEN THE RETURN GIFT
+/* =================================
+   WEBSITE SETTINGS
+================================= */
+
+// Change this number from 1 to 5
+// to select your highlighted photo.
+
+const highlightedPhotoNumber = 1;
+
+// Existing TinyURL
+
+const websiteURL =
+  "https://tinyurl.com/ReddyUmeshGift";
+
+
+/* =================================
+   LOAD ONLY 5 PHOTOS
+================================= */
+
+const photoWall =
+  document.getElementById("photo-wall");
+
+for (let i = 1; i <= 5; i++) {
+
+  const img = document.createElement("img");
+
+  img.src = `photo${i}.jpg`;
+
+  img.alt = `Memory photo ${i}`;
+
+  img.loading = "lazy";
+
+  img.onerror = function() {
+    this.style.display = "none";
+  };
+
+  photoWall.appendChild(img);
+}
+
+
+/* =================================
+   HIGHLIGHT YOUR PHOTO
+================================= */
+
+const featuredPhoto =
+  document.getElementById("featured-photo");
+
+featuredPhoto.src =
+  `photo${highlightedPhotoNumber}.jpg`;
+
+featuredPhoto.onerror = function() {
+  this.alt = "Photo could not be loaded";
+};
+
+
+/* =================================
+   OPEN GIFT SCREEN
+================================= */
 
 function openGift() {
-    document.getElementById("giftPage").classList.remove("active");
 
-    document.getElementById("thanksPage").classList.add("active");
+  document
+    .getElementById("welcome-screen")
+    .classList.add("hidden");
 
-    window.scrollTo(0, 0);
+  document
+    .getElementById("thankyou-screen")
+    .classList.remove("hidden");
 
-    launchConfetti();
+  launchConfetti();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
-// GO BACK TO THE GIFT SCREEN
 
-function goBack() {
-    document.getElementById("thanksPage").classList.remove("active");
+/* =================================
+   FLOATING HEARTS AND FLOWERS
+================================= */
 
-    document.getElementById("giftPage").classList.add("active");
+function createFloatingEffect() {
 
-    window.scrollTo(0, 0);
+  const symbols = [
+    "❤️", "💕", "🌸",
+    "✨", "💖", "🌹"
+  ];
+
+  const item = document.createElement("div");
+
+  item.className = "floating";
+
+  item.textContent =
+    symbols[Math.floor(Math.random() * symbols.length)];
+
+  item.style.left =
+    Math.random() * 100 + "vw";
+
+  item.style.fontSize =
+    (16 + Math.random() * 22) + "px";
+
+  item.style.animationDuration =
+    (5 + Math.random() * 5) + "s";
+
+  document.body.appendChild(item);
+
+  setTimeout(() => {
+    item.remove();
+  }, 11000);
 }
 
-// FLOATING HEARTS AND FLOWERS
+setInterval(createFloatingEffect, 450);
 
-const decorations = ["❤️", "💕", "💗", "🌸", "🌹", "✨", "💖"];
 
-for (let i = 0; i < 28; i++) {
-    const item = document.createElement("div");
-
-    item.className = "float";
-
-    item.textContent =
-        decorations[Math.floor(Math.random() * decorations.length)];
-
-    item.style.left = Math.random() * 100 + "vw";
-
-    item.style.animationDelay = Math.random() * 9 + "s";
-
-    item.style.animationDuration = (6 + Math.random() * 7) + "s";
-
-    document.body.appendChild(item);
-}
-
-// CONFETTI CELEBRATION
+/* =================================
+   CONFETTI ANIMATION
+================================= */
 
 function launchConfetti() {
-    const canvas = document.getElementById("confetti");
-    const ctx = canvas.getContext("2d");
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+  for (let i = 0; i < 100; i++) {
 
-    const pieces = [];
+    const piece = document.createElement("div");
 
-    for (let i = 0; i < 120; i++) {
-        pieces.push({
-            x: Math.random() * canvas.width,
-            y: -Math.random() * canvas.height,
-            size: Math.random() * 8 + 4,
-            speed: Math.random() * 4 + 2,
-            color: ["#ff1681", "#9c27b0", "#ffd700",
-                    "#00bcd4", "#ff5722"][i % 5]
-        });
-    }
+    piece.className = "confetti";
 
-    let frame = 0;
+    piece.style.left =
+      Math.random() * 100 + "vw";
 
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const colors = [
+      "#ffcc55",
+      "#ff70b8",
+      "#ffffff",
+      "#a77bff",
+      "#62e7c5"
+    ];
 
-        pieces.forEach(piece => {
-            ctx.fillStyle = piece.color;
-            ctx.fillRect(piece.x, piece.y, piece.size, piece.size);
-            piece.y += piece.speed;
-            piece.x += Math.sin(piece.y / 20);
-        });
+    piece.style.background =
+      colors[Math.floor(Math.random() * colors.length)];
 
-        frame++;
+    piece.style.animationDelay =
+      Math.random() * 2 + "s";
 
-        if (frame < 150) {
-            requestAnimationFrame(animate);
-        } else {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-        }
-    }
+    document.body.appendChild(piece);
 
-    animate();
+    setTimeout(() => {
+      piece.remove();
+    }, 6000);
+  }
 }
 
-// SHARE THE WEBSITE LINK
 
-async function sharePage() {
-    const link = window.location.href;
+/* =================================
+   SHARE WEBSITE LINK
+================================= */
 
-    const message =
-        "🎁 A special return gift from S. Reddy Umesh! " +
-        "Thank you for all your beautiful birthday wishes! ❤️ " +
-        "Open my thank-you page here: " + link;
+async function shareWebsite() {
 
-    if (navigator.share) {
-        try {
-            await navigator.share({
-                title: "A Special Thank You ❤️",
-                text: message,
-                url: link
-            });
-        } catch (error) {
-            if (error.name !== "AbortError") {
-                copyLink(link);
-            }
-        }
-    } else {
-        copyLink(link);
+  const shareData = {
+    title: "REDDY UMESH GIFT ❤️",
+    text: "A special birthday thank-you surprise! Open it here ❤️",
+    url: websiteURL
+  };
+
+  if (navigator.share) {
+
+    try {
+      await navigator.share(shareData);
+    } catch (error) {
+      console.log("Sharing cancelled");
     }
-}
 
-function copyLink(link) {
-    navigator.clipboard.writeText(link)
-        .then(() => alert("Website link copied! Share it with your friends ❤️"))
-        .catch(() => alert("Copy this link: " + link));
+  } else {
+
+    try {
+      await navigator.clipboard.writeText(websiteURL);
+
+      alert(
+        "Website link copied! Share it with your friends ❤️"
+      );
+
+    } catch (error) {
+
+      prompt(
+        "Copy your website link:",
+        websiteURL
+      );
+
+    }
+  }
 }
 
 </script>
