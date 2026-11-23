@@ -4,13 +4,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thank You My Friends ❤️</title>
+<title>Thank You - S. Reddy Umesh ❤️</title>
 
 <style>
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -22,15 +22,10 @@ body {
     justify-content: center;
     font-family: Georgia, serif;
     background: linear-gradient(
-        120deg,
-        #ff9a9e,
-        #fad0c4,
-        #fbc2eb,
-        #a6c1ee,
-        #c2e9fb
+        135deg, #ff758c, #ffb6d5, #c2a5ff, #80dfff, #ffe29f
     );
-    background-size: 300% 300%;
-    animation: gradient 10s ease infinite;
+    background-size: 400% 400%;
+    animation: gradient 12s ease infinite;
 }
 
 @keyframes gradient {
@@ -40,33 +35,38 @@ body {
 
 .card {
     width: 100%;
-    max-width: 520px;
-    padding: 35px 24px;
+    max-width: 540px;
+    padding: 35px 23px;
     text-align: center;
     border-radius: 28px;
     border: 3px solid white;
-    background: linear-gradient(145deg, #fff0f6, #ffffff, #fff4e6);
-    box-shadow: 0 15px 45px #9b246855;
+    background: linear-gradient(145deg, #fff0f7, #fff, #fff1d9);
+    box-shadow: 0 15px 45px #8d145955;
     position: relative;
     overflow: hidden;
 }
 
-.card::before {
-    content: "🌹 🌸 💗 🌺 🌹";
-    display: block;
-    font-size: 25px;
-    margin-bottom: 15px;
+.top-flowers {
+    font-size: 27px;
+    margin-bottom: 12px;
 }
 
 h1 {
     font-size: clamp(27px, 7vw, 38px);
     color: #e60073;
-    text-shadow: 2px 2px 4px #ffb6d5;
-    margin-bottom: 18px;
+    text-shadow: 2px 2px 5px #ffc0dc;
+    margin-bottom: 12px;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #7b2cbf;
+    margin: 15px 0;
 }
 
 .subtitle {
-    color: #8b008b;
+    color: #d00065;
     font-size: 19px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -82,16 +82,16 @@ h1 {
     padding: 12px;
     margin: 12px 0;
     border-radius: 15px;
-    background: linear-gradient(90deg, #ffe0ef, #fff0d9);
-    color: #a00058;
+    background: linear-gradient(90deg, #ffe0ef, #e9ddff, #fff0d9);
+    color: #9c1760;
     font-weight: bold;
     box-shadow: 0 3px 10px #e6a4c455;
 }
 
-.big-heart {
+.heart {
     font-size: 43px;
-    animation: heartbeat 1.2s infinite;
     margin: 15px 0;
+    animation: heartbeat 1.2s infinite;
 }
 
 @keyframes heartbeat {
@@ -105,8 +105,10 @@ h1 {
     color: #d00065;
 }
 
-.decor {
-    font-size: 25px;
+.signature {
+    color: #673ab7;
+    font-size: 20px;
+    font-weight: bold;
     margin-top: 18px;
 }
 
@@ -154,59 +156,73 @@ button:hover {
 
 <div class="card" id="thankyouCard">
 
-    <div class="big-heart">💖 💕 💖</div>
+    <div class="top-flowers">🌹 🌸 💐 🌺 🌹</div>
 
-    <h1>A Small Message From My Heart</h1>
+    <div class="heart">🎂 ❤️ 🎉</div>
+
+    <h1>A Special Thank You!</h1>
+
+    <div class="name">From S. Reddy Umesh</div>
 
     <div class="subtitle">
-        To All My Wonderful Friends 🌷
+        To All My Wonderful Friends & Family 💖
     </div>
 
     <div class="message">
+
         <div class="caption">
-            💗 Thank You For All Your Beautiful Wishes!
+            ❤️ Thank You For All Your Beautiful Birthday Wishes!
         </div>
 
         <div class="caption">
-            🥰 Every Message Made Me Smile!
+            🥰 Every Message, Call And Blessing Made My Day Special!
         </div>
 
         <div class="caption">
-            🌹 Your Love Made My Day Special!
+            💕 Your Love And Affection Mean So Much To Me!
         </div>
 
         <div class="caption">
-            💝 I'm Truly Blessed To Have Friends Like You!
+            🌹 I Feel Truly Blessed To Have Amazing People Like You!
         </div>
 
         <div class="caption">
-            ✨ Your Love Means Everything To Me!
+            ✨ Your Wishes Filled My Birthday With Happiness!
         </div>
 
         <div class="caption">
-            🌸 Every Wish Will Always Be Remembered!
+            💝 Thank You For Making My Day Unforgettable!
         </div>
 
         <div class="caption">
-            ❤️ Forever Grateful… Forever Blessed!
+            🙏 I'm Grateful For Every Single One Of You!
         </div>
+
     </div>
 
-    <div class="big-heart">💞 ❤️ 💞</div>
+    <div class="heart">💗 💖 💗</div>
 
     <div class="footer">
         THANK YOU EVERYONE! 🙏❤️
     </div>
 
-    <div class="decor">
-        🌺 🌹 🌸 💐 🌷
+    <div class="signature">
+        With Love,<br>
+        S. REDDY UMESH
     </div>
+
+    <div class="top-flowers" style="margin-top:20px">
+        🌺 🌷 🌹 💐 🌸
+    </div>
+
 </div>
 
 <div class="buttons">
-    <button onclick="downloadImage()">⬇ Download PNG</button>
-    <button onclick="shareImage()">📲 Share Image</button>
+    <button onclick="downloadImage()">⬇ Download Thank You Image</button>
+    <button onclick="shareImage()">📲 Share With Friends</button>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <script>
 const decorations = ["❤️", "💕", "💗", "🌸", "🌹", "✨", "💖"];
@@ -225,23 +241,21 @@ for (let i = 0; i < 30; i++) {
 }
 
 async function makeImage() {
-    const card = document.getElementById("thankyouCard");
-
     if (!window.html2canvas) {
-        throw new Error("Image library could not load. Check your internet connection.");
+        throw new Error("Please check your internet connection and try again.");
     }
 
-    return await html2canvas(card, {
-        scale: 3,
-        backgroundColor: "#fff0f6"
-    });
+    return await html2canvas(
+        document.getElementById("thankyouCard"),
+        { scale: 3, backgroundColor: "#fff0f6" }
+    );
 }
 
 async function downloadImage() {
     try {
         const canvas = await makeImage();
         const link = document.createElement("a");
-        link.download = "Thank_You_Everyone.png";
+        link.download = "Birthday_Thank_You_S_Reddy_Umesh.png";
         link.href = canvas.toDataURL("image/png");
         link.click();
     } catch (error) {
@@ -259,7 +273,7 @@ async function shareImage() {
 
         const file = new File(
             [blob],
-            "Thank_You_Everyone.png",
+            "Birthday_Thank_You.png",
             { type: "image/png" }
         );
 
@@ -267,22 +281,20 @@ async function shareImage() {
             navigator.canShare({ files: [file] })) {
             await navigator.share({
                 files: [file],
-                title: "Thank You Everyone ❤️",
-                text: "Thank you for all your beautiful wishes! 💖"
+                title: "Birthday Thank You ❤️",
+                text: "Thank you everyone for your beautiful birthday wishes! ❤️"
             });
         } else {
             await downloadImage();
-            alert("Image downloaded! You can now share it on WhatsApp.");
+            alert("Image downloaded! Share it with your friends and family.");
         }
     } catch (error) {
         if (error.name !== "AbortError") {
-            alert("Please download the PNG and share it manually.");
+            alert("Please download the image and share it manually.");
         }
     }
 }
 </script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 </body>
 </html>
