@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thank You - S. Reddy Umesh ❤️</title>
+<title>A Special Return Gift - S. Reddy Umesh</title>
 
 <style>
 * {
@@ -15,82 +15,131 @@
 
 body {
     min-height: 100vh;
-    padding: 25px 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     font-family: Georgia, serif;
-    background: linear-gradient(
-        135deg, #ff758c, #ffb6d5, #c2a5ff, #80dfff, #ffe29f
-    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+    background: linear-gradient(135deg,
+        #ff758c, #ffb6d5, #c2a5ff, #80dfff, #ffe29f);
     background-size: 400% 400%;
-    animation: gradient 12s ease infinite;
+    animation: bg 12s ease infinite;
 }
 
-@keyframes gradient {
+@keyframes bg {
     0%,100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
 }
 
-.card {
+.container {
     width: 100%;
     max-width: 540px;
-    padding: 35px 23px;
     text-align: center;
-    border-radius: 28px;
-    border: 3px solid white;
-    background: linear-gradient(145deg, #fff0f7, #fff, #fff1d9);
-    box-shadow: 0 15px 45px #8d145955;
     position: relative;
-    overflow: hidden;
+    z-index: 2;
 }
 
-.top-flowers {
+.page {
+    display: none;
+    padding: 35px 22px;
+    border: 3px solid white;
+    border-radius: 30px;
+    background: linear-gradient(145deg,
+        #fff0f7, #ffffff, #fff0df);
+    box-shadow: 0 15px 45px #80134d55;
+    animation: appear 0.9s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(25px) scale(.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.flowers {
     font-size: 27px;
-    margin-bottom: 12px;
+    margin: 10px;
 }
 
 h1 {
-    font-size: clamp(27px, 7vw, 38px);
     color: #e60073;
+    font-size: clamp(28px, 7vw, 38px);
+    margin: 15px 0;
     text-shadow: 2px 2px 5px #ffc0dc;
-    margin-bottom: 12px;
 }
 
-.name {
-    font-size: 24px;
-    font-weight: bold;
-    color: #7b2cbf;
+h2 {
+    color: #a00065;
+    font-size: 23px;
     margin: 15px 0;
 }
 
-.subtitle {
-    color: #d00065;
-    font-size: 19px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.message {
+p {
     color: #71345e;
     font-size: 17px;
     line-height: 1.8;
+    margin: 12px 0;
+}
+
+.signature {
+    color: #7134b7;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.gift {
+    font-size: 115px;
+    margin: 25px 0;
+    cursor: pointer;
+    display: inline-block;
+    animation: bounce 1.5s infinite;
+    filter: drop-shadow(0 10px 10px #d64b8955);
+}
+
+@keyframes bounce {
+    0%,100% { transform: translateY(0) rotate(-4deg); }
+    50% { transform: translateY(-15px) rotate(4deg); }
+}
+
+.open-btn, .share-btn, .back-btn {
+    border: none;
+    padding: 14px 24px;
+    border-radius: 35px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 18px;
+    background: linear-gradient(90deg,
+        #ff1681, #9c27b0, #536dfe);
+    box-shadow: 0 6px 18px #a0005855;
+    transition: .3s;
+}
+
+.open-btn:hover, .share-btn:hover, .back-btn:hover {
+    transform: scale(1.06);
 }
 
 .caption {
-    padding: 12px;
-    margin: 12px 0;
+    background: linear-gradient(90deg,
+        #ffe0ef, #e9ddff, #fff0d9);
     border-radius: 15px;
-    background: linear-gradient(90deg, #ffe0ef, #e9ddff, #fff0d9);
+    padding: 13px;
+    margin: 12px 0;
     color: #9c1760;
     font-weight: bold;
+    line-height: 1.6;
     box-shadow: 0 3px 10px #e6a4c455;
 }
 
 .heart {
-    font-size: 43px;
-    margin: 15px 0;
+    font-size: 40px;
+    margin: 15px;
     animation: heartbeat 1.2s infinite;
 }
 
@@ -98,50 +147,20 @@ h1 {
     50% { transform: scale(1.2); }
 }
 
-.footer {
-    margin-top: 20px;
-    font-size: 23px;
-    font-weight: bold;
-    color: #d00065;
+#confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
 }
 
-.signature {
-    color: #673ab7;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 18px;
-}
-
-.buttons {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 22px;
-}
-
-button {
-    border: none;
-    border-radius: 30px;
-    padding: 13px 20px;
-    font-size: 15px;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    background: linear-gradient(90deg, #ff1681, #9c27b0, #536dfe);
-    box-shadow: 0 5px 15px #a0005855;
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-.floating {
+.float {
     position: fixed;
     bottom: -50px;
+    font-size: 25px;
     animation: floatUp 9s linear infinite;
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
 }
 
 @keyframes floatUp {
@@ -149,26 +168,69 @@ button:hover {
     20% { opacity: 1; }
     100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
 }
+
+@media(max-width:400px) {
+    .page { padding: 27px 16px; }
+    p { font-size: 16px; }
+}
 </style>
 </head>
 
 <body>
 
-<div class="card" id="thankyouCard">
+<div class="container">
 
-    <div class="top-flowers">🌹 🌸 💐 🌺 🌹</div>
+    <!-- FIRST SCREEN: RETURN GIFT -->
 
-    <div class="heart">🎂 ❤️ 🎉</div>
+    <section class="page active" id="giftPage">
 
-    <h1>A Special Thank You!</h1>
+        <div class="flowers">🌹 🌸 💐 🌺 🌹</div>
 
-    <div class="name">From S. Reddy Umesh</div>
+        <div class="heart">❤️ 💗 ❤️</div>
 
-    <div class="subtitle">
-        To All My Wonderful Friends & Family 💖
-    </div>
+        <h1>A Little Surprise For You!</h1>
 
-    <div class="message">
+        <h2>🎁 Your Return Gift Is Ready!</h2>
+
+        <p>
+            You made my birthday special with your love,
+            beautiful wishes and blessings.
+        </p>
+
+        <p>
+            Now I have a little surprise for you! 🥰
+        </p>
+
+        <div class="gift" onclick="openGift()">🎁</div>
+
+        <h2>Tap The Gift To Open It!</h2>
+
+        <button class="open-btn" onclick="openGift()">
+            🎁 OPEN YOUR RETURN GIFT
+        </button>
+
+        <p style="font-size:14px; margin-top:20px;">
+            With love from S. Reddy Umesh ❤️
+        </p>
+
+        <div class="flowers">🌷 🌺 🌸 💖 🌹</div>
+
+    </section>
+
+
+    <!-- SECOND SCREEN: THANK YOU NOTE -->
+
+    <section class="page" id="thanksPage">
+
+        <div class="flowers">🌹 🌸 💐 🌺 🌹</div>
+
+        <div class="heart">🎂 ❤️ 🎉</div>
+
+        <h1>A Special Thank You!</h1>
+
+        <h2>From S. Reddy Umesh</h2>
+
+        <p>To All My Wonderful Friends & Family 💖</p>
 
         <div class="caption">
             ❤️ Thank You For All Your Beautiful Birthday Wishes!
@@ -183,7 +245,7 @@ button:hover {
         </div>
 
         <div class="caption">
-            🌹 I Feel Truly Blessed To Have Amazing People Like You!
+            🌹 I Feel Truly Blessed To Have People Like You!
         </div>
 
         <div class="caption">
@@ -198,102 +260,157 @@ button:hover {
             🙏 I'm Grateful For Every Single One Of You!
         </div>
 
-    </div>
+        <div class="heart">💗 💖 💗</div>
 
-    <div class="heart">💗 💖 💗</div>
+        <h2>THANK YOU EVERYONE! 🙏❤️</h2>
 
-    <div class="footer">
-        THANK YOU EVERYONE! 🙏❤️
-    </div>
+        <div class="signature">
+            With Love,<br>
+            S. REDDY UMESH
+        </div>
 
-    <div class="signature">
-        With Love,<br>
-        S. REDDY UMESH
-    </div>
+        <div class="flowers">🌺 🌷 🌹 💐 🌸</div>
 
-    <div class="top-flowers" style="margin-top:20px">
-        🌺 🌷 🌹 💐 🌸
-    </div>
+        <button class="share-btn" onclick="sharePage()">
+            📲 SHARE THANK YOU NOTE
+        </button>
+
+        <br>
+
+        <button class="back-btn" onclick="goBack()">
+            ↩ BACK TO GIFT
+        </button>
+
+    </section>
 
 </div>
 
-<div class="buttons">
-    <button onclick="downloadImage()">⬇ Download Thank You Image</button>
-    <button onclick="shareImage()">📲 Share With Friends</button>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<canvas id="confetti"></canvas>
 
 <script>
+
+// OPEN THE RETURN GIFT
+
+function openGift() {
+    document.getElementById("giftPage").classList.remove("active");
+
+    document.getElementById("thanksPage").classList.add("active");
+
+    window.scrollTo(0, 0);
+
+    launchConfetti();
+}
+
+// GO BACK TO THE GIFT SCREEN
+
+function goBack() {
+    document.getElementById("thanksPage").classList.remove("active");
+
+    document.getElementById("giftPage").classList.add("active");
+
+    window.scrollTo(0, 0);
+}
+
+// FLOATING HEARTS AND FLOWERS
+
 const decorations = ["❤️", "💕", "💗", "🌸", "🌹", "✨", "💖"];
 
-for (let i = 0; i < 30; i++) {
+for (let i = 0; i < 28; i++) {
     const item = document.createElement("div");
-    item.className = "floating";
+
+    item.className = "float";
+
     item.textContent =
         decorations[Math.floor(Math.random() * decorations.length)];
 
     item.style.left = Math.random() * 100 + "vw";
+
     item.style.animationDelay = Math.random() * 9 + "s";
+
     item.style.animationDuration = (6 + Math.random() * 7) + "s";
 
     document.body.appendChild(item);
 }
 
-async function makeImage() {
-    if (!window.html2canvas) {
-        throw new Error("Please check your internet connection and try again.");
+// CONFETTI CELEBRATION
+
+function launchConfetti() {
+    const canvas = document.getElementById("confetti");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const pieces = [];
+
+    for (let i = 0; i < 120; i++) {
+        pieces.push({
+            x: Math.random() * canvas.width,
+            y: -Math.random() * canvas.height,
+            size: Math.random() * 8 + 4,
+            speed: Math.random() * 4 + 2,
+            color: ["#ff1681", "#9c27b0", "#ffd700",
+                    "#00bcd4", "#ff5722"][i % 5]
+        });
     }
 
-    return await html2canvas(
-        document.getElementById("thankyouCard"),
-        { scale: 3, backgroundColor: "#fff0f6" }
-    );
-}
+    let frame = 0;
 
-async function downloadImage() {
-    try {
-        const canvas = await makeImage();
-        const link = document.createElement("a");
-        link.download = "Birthday_Thank_You_S_Reddy_Umesh.png";
-        link.href = canvas.toDataURL("image/png");
-        link.click();
-    } catch (error) {
-        alert(error.message);
-    }
-}
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-async function shareImage() {
-    try {
-        const canvas = await makeImage();
+        pieces.forEach(piece => {
+            ctx.fillStyle = piece.color;
+            ctx.fillRect(piece.x, piece.y, piece.size, piece.size);
+            piece.y += piece.speed;
+            piece.x += Math.sin(piece.y / 20);
+        });
 
-        const blob = await new Promise(resolve =>
-            canvas.toBlob(resolve, "image/png")
-        );
+        frame++;
 
-        const file = new File(
-            [blob],
-            "Birthday_Thank_You.png",
-            { type: "image/png" }
-        );
-
-        if (navigator.canShare &&
-            navigator.canShare({ files: [file] })) {
-            await navigator.share({
-                files: [file],
-                title: "Birthday Thank You ❤️",
-                text: "Thank you everyone for your beautiful birthday wishes! ❤️"
-            });
+        if (frame < 150) {
+            requestAnimationFrame(animate);
         } else {
-            await downloadImage();
-            alert("Image downloaded! Share it with your friends and family.");
-        }
-    } catch (error) {
-        if (error.name !== "AbortError") {
-            alert("Please download the image and share it manually.");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
     }
+
+    animate();
 }
+
+// SHARE THE WEBSITE LINK
+
+async function sharePage() {
+    const link = window.location.href;
+
+    const message =
+        "🎁 A special return gift from S. Reddy Umesh! " +
+        "Thank you for all your beautiful birthday wishes! ❤️ " +
+        "Open my thank-you page here: " + link;
+
+    if (navigator.share) {
+        try {
+            await navigator.share({
+                title: "A Special Thank You ❤️",
+                text: message,
+                url: link
+            });
+        } catch (error) {
+            if (error.name !== "AbortError") {
+                copyLink(link);
+            }
+        }
+    } else {
+        copyLink(link);
+    }
+}
+
+function copyLink(link) {
+    navigator.clipboard.writeText(link)
+        .then(() => alert("Website link copied! Share it with your friends ❤️"))
+        .catch(() => alert("Copy this link: " + link));
+}
+
 </script>
 
 </body>
